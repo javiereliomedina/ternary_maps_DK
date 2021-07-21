@@ -1,0 +1,15 @@
+fig:fig-prices-runits-parish
+fig:ternary-pop-year
+fig:ternary-pop-parish
+fig:fig-parish-tern-pop-price-all
+fig:fig-parish-tern-pop-price-year
+fig:tern-map
+fig:tern-map-2020
+capital-region
+data
+parishes-in-the-capital-region
+population
+housing-prices
+ternary-plots
+diagrams
+maps

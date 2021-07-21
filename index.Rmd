@@ -1,0 +1,106 @@
+---
+title: "Ternary maps of population structure in Denmark"
+author: "Javier Elío, Marina Georgati, Henning S. Hansen, Frederik S. Hass, Carsten Keßler"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+github-repo: javiereliomedina/housing_prices_book
+output: bookdown::gitbook
+documentclass: book
+bibliography: [packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Ternary maps DK"
+---
+
+# Prerequisite {.unnumbered}
+
+The data have been analysed with **R** (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) and **Rstudio** (version `r rstudioapi::versionInfo()$version`), and the book has been created with **bookdown** package. The actual version of *ggtern* (3.3.0) gets some conflicts with *ggplot2* (3.3.5) and some ggplots do not work after calling *ggtern*. Therefore, I would suggest to work install *ggplot2 v.3.3.0* and works in a separate project (with *renv*) when you need ternary plots with *ggtern*.
+
+```{r set-up-pckgs}
+
+# renv::init()
+# 
+# install.packages("sf")
+# install.packages("ggspatial")
+# install.packages("ggtern")
+# install.packages("tricolore")
+# install.packages("danstat")
+# install.packages("furrr")
+# install.packages("SnowballC")
+# install.packages("patchwork")
+# install.packages("tm")
+# install.packages("data.table")
+# install.packages("tidytable")
+# install.packages("latex2exp")
+# install.packages("rmarkdown")
+# install.packages("bookdown")
+# devtools::install_version("tidyverse",
+#                           version = "1.3.0",
+#                           repos = "http://cran.us.r-project.org")
+# devtools::install_version("ggplot2",
+#                           version = "3.3.0",
+#                           repos = "http://cran.us.r-project.org")
+
+```
+
+```{r load-pkgs, results='hide'}
+
+# Packages
+my_pkgs <- c("sf", "ggspatial", "ggtern", "tricolore", "tidyverse", "danstat",
+             "furrr", "SnowballC", "patchwork", "tm", "data.table", "tidytable",
+             "latex2exp", "rmarkdown")
+
+# load packages
+lapply(my_pkgs, require, character.only = TRUE)
+
+```
+
+```{r pkgs-bib, include=FALSE}
+
+# automatically create a bib database for R packages
+knitr::write_bib(x = c(.packages()), file = 'packages.bib')
+
+```
+
+Furthermore, we have created our own package for downloading [kortforsyningen](https://kortforsyningen.dk/) data to a local repository directly from R (i.e. [dangeo](https://github.com/javiereliomedina/dangeo.git)). The package can be downloaded from GitHub: 
+
+```{r install-github-packages}
+
+# Install packages from GitHub
+  if(!require("devtools"))  install.packages("devtools")
+
+  if (!require("dangeo"))  remotes::install_github("javiereliomedina/dangeo")
+  library(dangeo)
+
+```
+
+Although the *kortforsyningen* data are free, we would need to create a *username* and a *password* for getting access to them (you can make it here: ["Opret ny bruger"](https://kortforsyningen.dk/indhold/min-side-0)). By default **dangeo** looks for credentials on `.Renviron` as: `kortforsyningen_id = "username"` and `kortforsyningen_pwd = "password"`. You would need to save them with `usethis::edit_r_environ()`: 
+
+```{r dangeo}
+
+# Set username and password 
+# usethis::edit_r_environ() # Open .Renviron file, and save the username (kortforsyningen_id = "your_username") and password (kortforsyningen_pwd = "your_password")
+
+```
+
+You would also need to define with `dangeo_set_param()` the local directory where the data are downloaded (`loc_dir`). It is defined as `loc_dir = rappdirs::user_cache_dir()`, although it can be changed `loc_dir = “./your/local/path”`. The first time a file is downloaded with `dangeo_get_data()`, the process can be time consuming (there are some very big files). However, it will not be downloaded in subsequent calls if the files is already in the local directory (the dataset can be overwritten be setting `overwrite = TRUE` on `dangeo_get_data()`). Once we have our *username* and *password*, and we have define the local repository for the data, we can set them on our R-session:
+
+```{r}
+
+# Set local repository and password to kortforsyningen
+  dangeo_set_param()
+  
+```
+
+## Acknowledgements {-}
+
+This work has been financed by Aalborg University - AAU (Project: [Global flows of migrants and their impact on north European welfare states - FLOW](https://www.flow.aau.dk/)). The sole responsibility of this publication lies with the authors. AAU is not responsible for any use that may be made of the information contained therein.
+
+## R session {-}
+
+```{r R-session, echo = FALSE}
+
+sessionInfo()
+
+```
+

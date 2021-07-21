@@ -1,0 +1,8 @@
+book_filename: "ternary_maps_DK"
+ddelete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+new_session: no
+
+before_chapter_script: "_common.R"
