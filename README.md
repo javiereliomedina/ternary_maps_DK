@@ -11,4 +11,4 @@ This work is licensed under a
 
 # Ternary maps of population structure in Denmark
 
-R codes for plotting ternary maps with `ggter` and `tricolore`.
+R codes for plotting ternary maps with `ggter` and `tricolore`. Website link: [here](https://javiereliomedina.github.io/ternary_maps_DK/) 
