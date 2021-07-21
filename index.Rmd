@@ -14,12 +14,15 @@ description: "Ternary maps DK"
 
 # Prerequisite {.unnumbered}
 
-The data have been analysed with **R** (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) and **Rstudio** (version `r rstudioapi::versionInfo()$version`), and the book has been created with **bookdown** package. The actual version of *ggtern* (3.3.0) gets some conflicts with *ggplot2* (3.3.5) and some ggplots do not work after calling *ggtern*. Therefore, I would suggest to work install *ggplot2 v.3.3.0* and works in a separate project (with *renv*) when you need ternary plots with *ggtern*.
+The data have been analysed with **R** (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) and **Rstudio** (version `r rstudioapi::versionInfo()$version`), and the website has been created with **bookdown** package and *GitHub*. 
 
-```{r set-up-pckgs}
+There are some comflicts between `ggtern (3.3.0)` and `ggplot2 (v3.3.5)`, and some ggplots do not work after calling `ggtern`. I have used therefore `renv` for controlling the package versions in the project. In this sense, we can work in a separate project where we can plot ternary plots with `ggtern`or `tricolore` using a previous version of ggplot2 (i.e. `ggplot2 - v.3.3.0`). You may need to install other packages.
+
+```{r set-up-pckgs, results='hide'}
 
 # renv::init()
-# 
+
+# install Packages (uncomment as you need)
 # install.packages("sf")
 # install.packages("ggspatial")
 # install.packages("ggtern")
@@ -41,16 +44,12 @@ The data have been analysed with **R** (version `r paste(R.Version()$major, R.Ve
 #                           version = "3.3.0",
 #                           repos = "http://cran.us.r-project.org")
 
-```
-
-```{r load-pkgs, results='hide'}
-
-# Packages
+# List of packages
 my_pkgs <- c("sf", "ggspatial", "ggtern", "tricolore", "tidyverse", "danstat",
              "furrr", "SnowballC", "patchwork", "tm", "data.table", "tidytable",
              "latex2exp", "rmarkdown")
 
-# load packages
+# Load packages
 lapply(my_pkgs, require, character.only = TRUE)
 
 ```
