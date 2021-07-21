@@ -14,9 +14,9 @@ description: "Ternary maps DK"
 
 # Prerequisite {.unnumbered}
 
-The data have been analysed with **R** (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) and **Rstudio** (version `r rstudioapi::versionInfo()$version`), and the website has been created with **bookdown** package and *GitHub*. 
+The data have been analysed with **R** (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) and **Rstudio** (version `r rstudioapi::versionInfo()$version`), and the website has been created with **bookdown** package and **GitHub**. 
 
-There are some comflicts between `ggtern (3.3.0)` and `ggplot2 (v3.3.5)`, and some ggplots do not work after calling `ggtern`. I have used therefore `renv` for controlling the package versions in the project. In this sense, we can work in a separate project where we can plot ternary plots with `ggtern`or `tricolore` using a previous version of ggplot2 (i.e. `ggplot2 - v.3.3.0`). You may need to install other packages.
+There are some comflicts between `ggtern (3.3.0)` and `ggplot2 (3.3.5)`, and some ggplots do not work after calling `ggtern`. I have used therefore `renv` for controlling the package versions in the project. In this sense, we can work in a separate project where we can plot ternary plots with `ggtern`or `tricolore` using a previous version of ggplot2 (i.e. `3.3.0`). You may also need to install other packages.
 
 ```{r set-up-pckgs, results='hide'}
 
