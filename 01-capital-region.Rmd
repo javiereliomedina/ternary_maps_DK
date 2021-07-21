@@ -237,10 +237,12 @@ ggplot() +
           fill = NA,
           color = "white",
           size = 0.05) +
-  scale_fill_viridis_d(name = TeX("$\\overset{\\textbf{Percentiles}}{(kDKK/m^2)}$"),
-                     option = "magma",
-                     direction = -1) +
+  scale_fill_viridis_d(
+    name = TeX("$\\overset{\\textbf{Percentiles}}{(kDKK/m^2)}$"),
+    option = "magma",
+    direction = -1) +
   theme_void() +
+  guides(fill = guide_legend(reverse=T)) +
   labs(x = "",
        y = "") +
   facet_wrap( ~year, ncol = 3)
@@ -401,7 +403,7 @@ wrap_plots(plts, ncol = 3)
 
 Only for 2020.
 
-```{r fig-cap-reg-tern-map-2020, fig.height=10, fig.width=10, fig.cap="Population distribution in 2020"}
+```{r fig-cap-reg-tern-map-2020, fig.cap="Population distribution in 2020"}
 
 plts[[13]]
 
