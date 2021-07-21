@@ -30,10 +30,6 @@
 # Country
   dk_country <- st_union(dk_muni)
   
-```
-
-```{r prsh-poly}
-
 # Codes of the communes under study
   capital_region_muni <- c("København",
                            "Frederiksberg",
@@ -92,7 +88,7 @@
   
 ```
 
-```{r car-reg-prsh}
+```{r fig-cap-reg-prsh}
 
 ggplot() + 
   geom_sf(data = capital_prsh, 
@@ -218,14 +214,12 @@ capital_prsh_ancestry_sf <- capital_prsh %>%
 
 ### Housing prices
 
-```{r load-BBR-capital}
+```{r fig-cap-reg-prices, fig.height=10, fig.width=10, fig.cap = "Median 2020-adjusted house prices in the ordinary free trade by grid cells of 100m x 100m"}
 
+# Load data
 sum_runits_oft_prices <- readRDS("prsh_house_prices.rds")
 
-```
-
-```{r fig-prices-runits-parish,  fig.height=10, fig.width=10, fig.cap = "Median 2020-adjusted house prices in the ordinary free trade by grid cells of 100m x 100m"}
-
+# Plot
 ggplot() +
   geom_sf(data = dk_country_crop,
           aes(geometry = geometry),
@@ -259,7 +253,7 @@ ggplot() +
 
 Population structure by year, with all the data together in the same diagram. 
 
-```{r ternary-pop-year, fig.height=10, fig.width=10, fig.cap = "ternary plot by year"}
+```{r fig-cap-reg-tern-pop-year, fig.height=10, fig.width=10, fig.cap = "ternary plot by year"}
 
 ggtern::ggtern(data = capital_prsh_ancestry_sf,
        aes(x = pop_dan,
@@ -277,7 +271,7 @@ ggtern::ggtern(data = capital_prsh_ancestry_sf,
 
 Separate plots by year and add the parishes in the legend. 
 
-```{r ternary-pop-parish, fig.height=20, fig.width=10, fig.cap = "Ternary plots by parish"}
+```{r fig-cap-reg-tern-pop-year-prsh, fig.height=20, fig.width=10, fig.cap = "Ternary plots by parish"}
 
 ggtern::ggtern(data = capital_prsh_ancestry_sf,
        aes(x = pop_dan,
@@ -295,7 +289,7 @@ ggtern::ggtern(data = capital_prsh_ancestry_sf,
 
 Links with house prices (zoom the figure to the parishes with median values). 
 
-```{r fig-parish-tern-pop-price-all, fig.cap = "Median housing prices and popupation distribution by parish (all data)"}
+```{r fig-cap-reg-tern-pop-price-all, fig.cap = "Median housing prices and popupation distribution by parish (all data)"}
 
 ggtern::ggtern(data = sum_runits_oft_prices,
                aes(x = pop_dan,
@@ -316,7 +310,7 @@ ggtern::ggtern(data = sum_runits_oft_prices,
 
 ```
 
-```{r fig-parish-tern-pop-price-year, fig.height=10, fig.width=10, fig.cap = "Median housing prices and popupation distribution by parish and year"}
+```{r fig-cap-reg-tern-pop-price-year, fig.height=10, fig.width=10, fig.cap = "Median housing prices and popupation distribution by parish and year"}
 
 ggtern::ggtern(data = sum_runits_oft_prices,
                aes(x = pop_dan,
@@ -342,7 +336,7 @@ ggtern::ggtern(data = sum_runits_oft_prices,
 
 Center over the compositional mean of 2019 (i.e. Danes ~ 80.3%; non-wst ~ 12.3; and wst ~ 7.4%).  
 
-```{r tern-map, fig.height=20, fig.width=20, fig.cap="Population distribution"}
+```{r fig-cap-reg-tern-map, fig.height=20, fig.width=20, fig.cap="Population distribution"}
 
 f_tern_map <- function(df) {
 
@@ -407,7 +401,7 @@ wrap_plots(plts, ncol = 3)
 
 Only for 2020.
 
-```{r tern-map-2020, fig.height=10, fig.width=10, fig.cap="Population distribution in 2020"}
+```{r fig-cap-reg-tern-map-2020, fig.height=10, fig.width=10, fig.cap="Population distribution in 2020"}
 
 plts[[13]]
 

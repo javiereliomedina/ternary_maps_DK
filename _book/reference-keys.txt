@@ -1,10 +1,10 @@
-fig:fig-prices-runits-parish
-fig:ternary-pop-year
-fig:ternary-pop-parish
-fig:fig-parish-tern-pop-price-all
-fig:fig-parish-tern-pop-price-year
-fig:tern-map
-fig:tern-map-2020
+fig:fig-cap-reg-prices
+fig:fig-cap-reg-tern-pop-year
+fig:fig-cap-reg-tern-pop-year-prsh
+fig:fig-cap-reg-tern-pop-price-all
+fig:fig-cap-reg-tern-pop-price-year
+fig:fig-cap-reg-tern-map
+fig:fig-cap-reg-tern-map-2020
 capital-region
 data
 parishes-in-the-capital-region

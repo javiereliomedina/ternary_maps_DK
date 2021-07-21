@@ -12,9 +12,6 @@ purrr
 dplyr
 stringr
 forcats
-usethis
-devtools
-dangeo
 danstat
 future
 furrr
@@ -25,6 +22,7 @@ tm
 data.table
 tidytable
 latex2exp
-viridisLite
-viridis
 rmarkdown
+usethis
+devtools
+dangeo
