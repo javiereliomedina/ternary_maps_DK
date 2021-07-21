@@ -3,7 +3,7 @@ title: "Ternary maps of population structure in Denmark"
 author: "Javier Elío, Marina Georgati, Henning S. Hansen, Frederik S. Hass, Carsten Keßler"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-github-repo: javiereliomedina/housing_prices_book
+github-repo: javiereliomedina/ternary_maps_DK
 output: bookdown::gitbook
 documentclass: book
 bibliography: [packages.bib]
