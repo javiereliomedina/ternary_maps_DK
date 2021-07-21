@@ -255,16 +255,14 @@ ggplot() +
 
 Population structure by year, with all the data together in the same diagram. 
 
-```{r fig-cap-reg-tern-pop-year, fig.height=10, fig.width=10, fig.cap = "ternary plot by year"}
+```{r fig-cap-reg-tern-pop-year, fig.cap = "Ternary plot by year"}
 
 ggtern::ggtern(data = capital_prsh_ancestry_sf,
        aes(x = pop_dan,
            y = pop_frgn_wst,
            z = pop_frgn_nwst,
-           colour = factor(year)
-       )
-) +
-  scale_color_viridis_d() +
+           colour = factor(year))) +
+  scale_color_viridis_d(name = "Year") +
   geom_point() +
   ggtern::theme_rgbw() +
   ggtern::theme_hidetitles()
