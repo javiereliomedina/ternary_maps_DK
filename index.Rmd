@@ -20,9 +20,10 @@ There are some comflicts between `ggtern (3.3.0)` and `ggplot2 (v3.3.5)`, and so
 
 ```{r set-up-pckgs, results='hide'}
 
+# # Initialize a new project-local environment
 # renv::init()
-
-# install Packages (uncomment as you need)
+# 
+# # Install Packages (uncomment as you need)
 # install.packages("sf")
 # install.packages("ggspatial")
 # install.packages("ggtern")
@@ -37,6 +38,8 @@ There are some comflicts between `ggtern (3.3.0)` and `ggplot2 (v3.3.5)`, and so
 # install.packages("latex2exp")
 # install.packages("rmarkdown")
 # install.packages("bookdown")
+# install.packages("servr")
+# install.packages("devtools")
 # devtools::install_version("tidyverse",
 #                           version = "1.3.0",
 #                           repos = "http://cran.us.r-project.org")
@@ -51,6 +54,9 @@ my_pkgs <- c("sf", "ggspatial", "ggtern", "tricolore", "tidyverse", "danstat",
 
 # Load packages
 lapply(my_pkgs, require, character.only = TRUE)
+
+# # Save the state of the project
+# renv::snapshot()
 
 ```
 
