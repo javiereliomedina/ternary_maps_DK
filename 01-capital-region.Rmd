@@ -287,6 +287,23 @@ ggtern::ggtern(data = capital_prsh_ancestry_sf,
 
 ```
 
+Only 2020 data. 
+
+```{r fig-cap-reg-tern-pop-year-prsh-2020, fig.height=10, fig.width=10, fig.cap = "Ternary plots by parish in 2020"}
+
+ggtern::ggtern(data = filter(capital_prsh_ancestry_sf, year == 2020),
+       aes(x = pop_dan,
+           y = pop_frgn_wst,
+           z = pop_frgn_nwst,
+           colour = prsh_name)) +
+  geom_point() +
+  ggtern::theme_rgbw() +
+  ggtern::theme_hidetitles() +
+  theme(legend.position = "bottom") +
+  guides(colour = guide_legend(title.position = "top"))
+
+```
+
 Links with house prices (zoom the figure to the parishes with median values). 
 
 ```{r fig-cap-reg-tern-pop-price-all, fig.cap = "Median housing prices and popupation distribution by parish (all data)"}
@@ -324,6 +341,29 @@ ggtern::ggtern(data = sum_runits_oft_prices,
                                option = "turbo",
                                discrete = TRUE) +
   geom_point(size = 0.9) +
+  ggtern::theme_rgbw() +
+  ggtern::theme_hidetitles() +
+  ggtern::theme_zoom_L(0.6) +
+  guides(colour = guide_legend(reverse = TRUE,
+                               override.aes = list(size = 3)))
+
+```
+
+Only 2020
+
+```{r fig-cap-reg-tern-pop-price-2020, fig.cap = "Median housing prices and popupation distribution by parish (2020)"}
+
+ggtern::ggtern(data = filter(sum_runits_oft_prices, year == 2020),
+               aes(x = pop_dan,
+                   y = pop_frgn_wst,
+                   z = pop_frgn_nwst,
+                   colour = cut_number(median_2020_kDKK_m2,
+                                       n = 10,
+                                       dig.lab = 0))) +
+  viridis::scale_color_viridis(name = "Percentiles\n[kDkk/m2]",
+                               option = "turbo",
+                               discrete = TRUE) +
+  geom_point(size = 0.85) +
   ggtern::theme_rgbw() +
   ggtern::theme_hidetitles() +
   ggtern::theme_zoom_L(0.6) +
