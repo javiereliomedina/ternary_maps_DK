@@ -24,7 +24,7 @@
 <meta name="author" content="Javier Elío, Marina Georgati, Henning S. Hansen, Frederik S. Hass, Carsten Keßler" />
 
 
-<meta name="date" content="2021-07-27" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -914,7 +914,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Ternary maps of population structure in Denmark</h1>
 <p class="author"><em>Javier Elío, Marina Georgati, Henning S. Hansen, Frederik S. Hass, Carsten Keßler</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-07-27</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-08-18</em></p>
 </div>
 <div id="prerequisite" class="section level1 unnumbered">
 <h1>Prerequisite</h1>
@@ -990,39 +990,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 # [1] stats     graphics  grDevices datasets  utils     methods   base     
 # 
 # other attached packages:
-#  [1] dangeo_0.0.0.9000 devtools_2.4.2    usethis_2.0.1     rmarkdown_2.9     latex2exp_0.5.0  
-#  [6] tidytable_0.6.3   data.table_1.14.0 tm_0.7-8          NLP_0.2-1         patchwork_1.1.1  
-# [11] SnowballC_0.7.0   furrr_0.2.3       future_1.21.0     danstat_0.1.0     forcats_0.5.1    
-# [16] stringr_1.4.0     dplyr_1.0.7       purrr_0.3.4       readr_2.0.0       tidyr_1.1.3      
-# [21] tibble_3.1.2      tidyverse_1.3.0   tricolore_1.2.2   ggtern_3.3.0      ggplot2_3.3.0    
-# [26] ggspatial_1.1.5   sf_1.0-1         
+#  [1] dangeo_0.0.0.9000 devtools_2.4.2    usethis_2.0.1     rmarkdown_2.9    
+#  [5] latex2exp_0.5.0   tidytable_0.6.3   data.table_1.14.0 tm_0.7-8         
+#  [9] NLP_0.2-1         patchwork_1.1.1   SnowballC_0.7.0   furrr_0.2.3      
+# [13] future_1.21.0     danstat_0.1.0     forcats_0.5.1     stringr_1.4.0    
+# [17] dplyr_1.0.7       purrr_0.3.4       readr_2.0.0       tidyr_1.1.3      
+# [21] tibble_3.1.2      tidyverse_1.3.0   tricolore_1.2.2   ggtern_3.3.0     
+# [25] ggplot2_3.3.0     ggspatial_1.1.5   sf_1.0-1         
 # 
 # loaded via a namespace (and not attached):
 #  [1] colorspace_2.0-2   ellipsis_0.3.2     class_7.3-19       rprojroot_2.0.2   
 #  [5] fs_1.5.0           rstudioapi_0.13    proxy_0.4-26       listenv_0.8.0     
 #  [9] remotes_2.4.0      fansi_0.5.0        lubridate_1.7.10   xml2_1.3.2        
 # [13] codetools_0.2-18   cachem_1.0.5       robustbase_0.93-8  knitr_1.33        
-# [17] pkgload_1.2.1      jsonlite_1.7.2     broom_0.7.8        servr_0.22        
-# [21] dbplyr_2.1.1       compiler_4.1.0     httr_1.4.2         backports_1.2.1   
-# [25] fastmap_1.1.0      assertthat_0.2.1   cli_3.0.1          later_1.2.0       
-# [29] prettyunits_1.1.1  htmltools_0.5.1.1  tools_4.1.0        gtable_0.3.0      
-# [33] glue_1.4.2         rappdirs_0.3.3     Rcpp_1.0.7         slam_0.1-48       
-# [37] cellranger_1.1.0   jquerylib_0.1.4    vctrs_0.3.8        tensorA_0.36.2    
-# [41] xfun_0.24          ps_1.6.0           globals_0.14.0     proto_1.0.0       
-# [45] testthat_3.0.3     rvest_1.0.0        mime_0.11          lifecycle_1.0.0   
-# [49] renv_0.13.2        DEoptimR_1.0-9     MASS_7.3-54        scales_1.1.1      
-# [53] hms_1.1.0          promises_1.2.0.1   parallel_4.1.0     yaml_2.2.1        
-# [57] memoise_2.0.0      gridExtra_2.3      sass_0.4.0         stringi_1.7.3     
-# [61] desc_1.3.0         e1071_1.7-7        pkgbuild_1.2.0     rlang_0.4.11      
-# [65] pkgconfig_2.0.3    compositions_2.0-1 evaluate_0.14      lattice_0.20-44   
-# [69] processx_3.5.2     tidyselect_1.1.1   parallelly_1.27.0  plyr_1.8.6        
-# [73] magrittr_2.0.1     bookdown_0.22      R6_2.5.0           generics_0.1.0    
-# [77] DBI_1.1.1          pillar_1.6.1       haven_2.4.1        withr_2.4.2       
-# [81] units_0.7-2        bayesm_3.1-4       modelr_0.1.8       crayon_1.4.1      
-# [85] KernSmooth_2.23-20 utf8_1.2.1         tzdb_0.1.2         viridis_0.6.1     
-# [89] grid_4.1.0         readxl_1.3.1       callr_3.7.0        reprex_2.0.0      
-# [93] digest_0.6.27      classInt_0.4-3     httpuv_1.6.1       munsell_0.5.0     
-# [97] viridisLite_0.4.0  bslib_0.2.5.1      sessioninfo_1.1.1</code></pre>
+# [17] pkgload_1.2.1      jsonlite_1.7.2     broom_0.7.8        dbplyr_2.1.1      
+# [21] compiler_4.1.0     httr_1.4.2         backports_1.2.1    assertthat_0.2.1  
+# [25] fastmap_1.1.0      cli_3.0.1          prettyunits_1.1.1  htmltools_0.5.1.1 
+# [29] tools_4.1.0        gtable_0.3.0       glue_1.4.2         rappdirs_0.3.3    
+# [33] Rcpp_1.0.7         slam_0.1-48        cellranger_1.1.0   jquerylib_0.1.4   
+# [37] vctrs_0.3.8        tensorA_0.36.2     xfun_0.24          ps_1.6.0          
+# [41] globals_0.14.0     proto_1.0.0        testthat_3.0.3     rvest_1.0.0       
+# [45] lifecycle_1.0.0    renv_0.13.2        DEoptimR_1.0-9     MASS_7.3-54       
+# [49] scales_1.1.1       hms_1.1.0          parallel_4.1.0     yaml_2.2.1        
+# [53] memoise_2.0.0      gridExtra_2.3      sass_0.4.0         stringi_1.7.3     
+# [57] desc_1.3.0         e1071_1.7-7        pkgbuild_1.2.0     rlang_0.4.11      
+# [61] pkgconfig_2.0.3    compositions_2.0-1 evaluate_0.14      lattice_0.20-44   
+# [65] processx_3.5.2     tidyselect_1.1.1   parallelly_1.27.0  plyr_1.8.6        
+# [69] magrittr_2.0.1     bookdown_0.22      R6_2.5.0           generics_0.1.0    
+# [73] DBI_1.1.1          pillar_1.6.1       haven_2.4.1        withr_2.4.2       
+# [77] units_0.7-2        bayesm_3.1-4       modelr_0.1.8       crayon_1.4.1      
+# [81] KernSmooth_2.23-20 utf8_1.2.1         tzdb_0.1.2         viridis_0.6.1     
+# [85] grid_4.1.0         readxl_1.3.1       callr_3.7.0        reprex_2.0.0      
+# [89] digest_0.6.27      classInt_0.4-3     munsell_0.5.0      viridisLite_0.4.0 
+# [93] bslib_0.2.5.1      sessioninfo_1.1.1</code></pre>
 
 </div>
 </div>

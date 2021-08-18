@@ -24,7 +24,7 @@
 <meta name="author" content="Javier Elío, Marina Georgati, Henning S. Hansen, Frederik S. Hass, Carsten Keßler" />
 
 
-<meta name="date" content="2021-07-27" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1358,38 +1358,42 @@ Figure 1.8: Population distribution
 <span id="cb18-15"><a href="capital-region.html#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-16"><a href="capital-region.html#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co"># legend</span></span>
 <span id="cb18-17"><a href="capital-region.html#cb18-17" aria-hidden="true" tabindex="-1"></a>p_legend <span class="ot">&lt;-</span> tric<span class="sc">$</span>key <span class="sc">+</span></span>
-<span id="cb18-18"><a href="capital-region.html#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">L =</span> <span class="st">&quot;% Danes&quot;</span>,</span>
-<span id="cb18-19"><a href="capital-region.html#cb18-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">T =</span> <span class="st">&quot;% Wst&quot;</span>,</span>
-<span id="cb18-20"><a href="capital-region.html#cb18-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">R =</span> <span class="st">&quot;% Non-wst&quot;</span>) <span class="sc">+</span></span>
-<span id="cb18-21"><a href="capital-region.html#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb18-22"><a href="capital-region.html#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span>
-<span id="cb18-23"><a href="capital-region.html#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-24"><a href="capital-region.html#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Add columns with colours</span></span>
-<span id="cb18-25"><a href="capital-region.html#cb18-25" aria-hidden="true" tabindex="-1"></a>df_2020 <span class="ot">&lt;-</span> df_2020 <span class="sc">%&gt;%</span></span>
-<span id="cb18-26"><a href="capital-region.html#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop_rgb =</span> tric<span class="sc">$</span>rgb)</span>
+<span id="cb18-18"><a href="capital-region.html#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> df_2020,</span>
+<span id="cb18-19"><a href="capital-region.html#cb18-19" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> pop_dan, <span class="at">y =</span> pop_frgn_wst, <span class="at">z =</span> pop_frgn_nwst),</span>
+<span id="cb18-20"><a href="capital-region.html#cb18-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">16</span>,</span>
+<span id="cb18-21"><a href="capital-region.html#cb18-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb18-22"><a href="capital-region.html#cb18-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">L =</span> <span class="st">&quot;% Danes&quot;</span>,</span>
+<span id="cb18-23"><a href="capital-region.html#cb18-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">T =</span> <span class="st">&quot;% Wst&quot;</span>,</span>
+<span id="cb18-24"><a href="capital-region.html#cb18-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">R =</span> <span class="st">&quot;% Non-wst&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-25"><a href="capital-region.html#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb18-26"><a href="capital-region.html#cb18-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">5</span>))</span>
 <span id="cb18-27"><a href="capital-region.html#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-28"><a href="capital-region.html#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Map</span></span>
-<span id="cb18-29"><a href="capital-region.html#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb18-30"><a href="capital-region.html#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dk_country_crop,</span>
-<span id="cb18-31"><a href="capital-region.html#cb18-31" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">geometry =</span> geometry),</span>
-<span id="cb18-32"><a href="capital-region.html#cb18-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
-<span id="cb18-33"><a href="capital-region.html#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> df_2020,</span>
-<span id="cb18-34"><a href="capital-region.html#cb18-34" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> pop_rgb, <span class="at">geometry =</span> geometry),</span>
-<span id="cb18-35"><a href="capital-region.html#cb18-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
-<span id="cb18-36"><a href="capital-region.html#cb18-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
-<span id="cb18-37"><a href="capital-region.html#cb18-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> capital_muni,</span>
-<span id="cb18-38"><a href="capital-region.html#cb18-38" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">geometry =</span> geometry),</span>
-<span id="cb18-39"><a href="capital-region.html#cb18-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>,</span>
-<span id="cb18-40"><a href="capital-region.html#cb18-40" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb18-41"><a href="capital-region.html#cb18-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb18-42"><a href="capital-region.html#cb18-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb18-43"><a href="capital-region.html#cb18-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
-<span id="cb18-44"><a href="capital-region.html#cb18-44" aria-hidden="true" tabindex="-1"></a>    ggtern<span class="sc">::</span><span class="fu">ggplotGrob</span>(p_legend) ,</span>
-<span id="cb18-45"><a href="capital-region.html#cb18-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="dv">730000</span>,</span>
-<span id="cb18-46"><a href="capital-region.html#cb18-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmax =</span> <span class="dv">742000</span>,</span>
-<span id="cb18-47"><a href="capital-region.html#cb18-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="dv">6178000</span>,</span>
-<span id="cb18-48"><a href="capital-region.html#cb18-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> <span class="dv">6190000</span></span>
-<span id="cb18-49"><a href="capital-region.html#cb18-49" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb18-28"><a href="capital-region.html#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Add columns with colours</span></span>
+<span id="cb18-29"><a href="capital-region.html#cb18-29" aria-hidden="true" tabindex="-1"></a>df_2020 <span class="ot">&lt;-</span> df_2020 <span class="sc">%&gt;%</span></span>
+<span id="cb18-30"><a href="capital-region.html#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pop_rgb =</span> tric<span class="sc">$</span>rgb)</span>
+<span id="cb18-31"><a href="capital-region.html#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-32"><a href="capital-region.html#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Map</span></span>
+<span id="cb18-33"><a href="capital-region.html#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-34"><a href="capital-region.html#cb18-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dk_country_crop,</span>
+<span id="cb18-35"><a href="capital-region.html#cb18-35" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">geometry =</span> geometry),</span>
+<span id="cb18-36"><a href="capital-region.html#cb18-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-37"><a href="capital-region.html#cb18-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> df_2020,</span>
+<span id="cb18-38"><a href="capital-region.html#cb18-38" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> pop_rgb, <span class="at">geometry =</span> geometry),</span>
+<span id="cb18-39"><a href="capital-region.html#cb18-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb18-40"><a href="capital-region.html#cb18-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_identity</span>() <span class="sc">+</span></span>
+<span id="cb18-41"><a href="capital-region.html#cb18-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> capital_muni,</span>
+<span id="cb18-42"><a href="capital-region.html#cb18-42" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">geometry =</span> geometry),</span>
+<span id="cb18-43"><a href="capital-region.html#cb18-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="cn">NA</span>,</span>
+<span id="cb18-44"><a href="capital-region.html#cb18-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb18-45"><a href="capital-region.html#cb18-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb18-46"><a href="capital-region.html#cb18-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb18-47"><a href="capital-region.html#cb18-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
+<span id="cb18-48"><a href="capital-region.html#cb18-48" aria-hidden="true" tabindex="-1"></a>    ggtern<span class="sc">::</span><span class="fu">ggplotGrob</span>(p_legend) ,</span>
+<span id="cb18-49"><a href="capital-region.html#cb18-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="dv">730000</span>,</span>
+<span id="cb18-50"><a href="capital-region.html#cb18-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmax =</span> <span class="dv">742000</span>,</span>
+<span id="cb18-51"><a href="capital-region.html#cb18-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="dv">6178000</span>,</span>
+<span id="cb18-52"><a href="capital-region.html#cb18-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymax =</span> <span class="dv">6190000</span></span>
+<span id="cb18-53"><a href="capital-region.html#cb18-53" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:fig-cap-reg-tern-map-2020"></span>
 <img src="ternary_maps_DK_files/figure-html/fig-cap-reg-tern-map-2020-1.png" alt="Population distribution in 2020" width="672" />
 <p class="caption">

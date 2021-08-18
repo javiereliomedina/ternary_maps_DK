@@ -460,6 +460,10 @@ tric <- tricolore::Tricolore(df_2020,
 
 # legend
 p_legend <- tric$key +
+  geom_point(data = df_2020,
+             aes(x = pop_dan, y = pop_frgn_wst, z = pop_frgn_nwst),
+             shape = 16,
+             size = 0.2) +
   labs(L = "% Danes",
        T = "% Wst",
        R = "% Non-wst") +
